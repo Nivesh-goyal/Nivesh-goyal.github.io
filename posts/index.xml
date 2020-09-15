@@ -5,10 +5,6 @@
     <link>https://www.niveshopstree.tk/posts/</link>
     <description>Recent content in   on Devtron Labs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://www.niveshopstree.tk/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://www.niveshopstree.tk/posts/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

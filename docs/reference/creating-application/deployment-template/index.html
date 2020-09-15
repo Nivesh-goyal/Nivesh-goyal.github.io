@@ -14,7 +14,7 @@
 <title>Deployment Template | Devtron Labs</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
-<script defer src="/en.search.min.4aec94c96fbed0325c53ba1c404f41440ba4dcbe45655100472638a0cdb40099.js" integrity="sha256-SuyUyW&#43;&#43;0DJcU7ocQE9BRAuk3L5FZVEARyY4oM20AJk="></script>
+<script defer src="/en.search.min.9af1749fcaa7bfe28cd876952a1ec576100b8965fdf848545e552bf43316b547.js" integrity="sha256-mvF0n8qnv&#43;KM2HaVKh7FdhALiWX9&#43;EhUXlUr9DMWtUc="></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -517,10 +517,10 @@ https://github.com/alex-shpak/hugo-book
 <p><code>Application Metrics</code> is not supported for all the Chart Versions.</p>
 <h2 id="container">Container</h2>
 <p>This defines ports on which application services will be exposed to other services</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">ContainerPort</span>:
-    <span style="color:#66d9ef">name</span>: app
-    <span style="color:#66d9ef">port</span>: <span style="color:#ae81ff">8080</span>
-    <span style="color:#66d9ef">servicePort</span>: <span style="color:#ae81ff">80</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">ContainerPort</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">app</span>
+    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">8080</span>
+    <span style="color:#f92672">servicePort</span>: <span style="color:#ae81ff">80</span>
 </code></pre></div><table>
 <thead>
 <tr>
@@ -545,14 +545,14 @@ https://github.com/alex-shpak/hugo-book
 </table>
 <h2 id="liveness-probe">Liveness Probe</h2>
 <p>If this check fails, kubernetes restarts the pod. This should return error code in case of non-recoverable error</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">LivenessProbe</span>:
-  <span style="color:#66d9ef">Path</span>: <span style="color:#e6db74">&#34;&#34;</span>
-  <span style="color:#66d9ef">port</span>: <span style="color:#ae81ff">8080</span>
-  <span style="color:#66d9ef">initialDelaySeconds</span>: <span style="color:#ae81ff">20</span>
-  <span style="color:#66d9ef">periodSeconds</span>: <span style="color:#ae81ff">10</span>
-  <span style="color:#66d9ef">successThreshold</span>: <span style="color:#ae81ff">1</span>
-  <span style="color:#66d9ef">timeoutSeconds</span>: <span style="color:#ae81ff">5</span>
-  <span style="color:#66d9ef">failureThreshold</span>: <span style="color:#ae81ff">3</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">LivenessProbe</span>:
+  <span style="color:#f92672">Path</span>: <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#f92672">port</span>: <span style="color:#ae81ff">8080</span>
+  <span style="color:#f92672">initialDelaySeconds</span>: <span style="color:#ae81ff">20</span>
+  <span style="color:#f92672">periodSeconds</span>: <span style="color:#ae81ff">10</span>
+  <span style="color:#f92672">successThreshold</span>: <span style="color:#ae81ff">1</span>
+  <span style="color:#f92672">timeoutSeconds</span>: <span style="color:#ae81ff">5</span>
+  <span style="color:#f92672">failureThreshold</span>: <span style="color:#ae81ff">3</span>
 </code></pre></div><p>  </p>
 <table>
 <thead>
@@ -590,14 +590,14 @@ https://github.com/alex-shpak/hugo-book
 </table>
 <h2 id="readiness-probe">Readiness Probe</h2>
 <p>If this check fails, kubernetes stops sending traffic to the application. This should return error code in case of errors which can be recovered from if traffic is stopped</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">ReadinessProbe</span>:
-  <span style="color:#66d9ef">Path</span>: <span style="color:#e6db74">&#34;&#34;</span>
-  <span style="color:#66d9ef">port</span>: <span style="color:#ae81ff">8080</span>
-  <span style="color:#66d9ef">initialDelaySeconds</span>: <span style="color:#ae81ff">20</span>
-  <span style="color:#66d9ef">periodSeconds</span>: <span style="color:#ae81ff">10</span>
-  <span style="color:#66d9ef">successThreshold</span>: <span style="color:#ae81ff">1</span>
-  <span style="color:#66d9ef">timeoutSeconds</span>: <span style="color:#ae81ff">5</span>
-  <span style="color:#66d9ef">failureThreshold</span>: <span style="color:#ae81ff">3</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">ReadinessProbe</span>:
+  <span style="color:#f92672">Path</span>: <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#f92672">port</span>: <span style="color:#ae81ff">8080</span>
+  <span style="color:#f92672">initialDelaySeconds</span>: <span style="color:#ae81ff">20</span>
+  <span style="color:#f92672">periodSeconds</span>: <span style="color:#ae81ff">10</span>
+  <span style="color:#f92672">successThreshold</span>: <span style="color:#ae81ff">1</span>
+  <span style="color:#f92672">timeoutSeconds</span>: <span style="color:#ae81ff">5</span>
+  <span style="color:#f92672">failureThreshold</span>: <span style="color:#ae81ff">3</span>
 </code></pre></div><table>
 <thead>
 <tr>
@@ -634,12 +634,12 @@ https://github.com/alex-shpak/hugo-book
 </table>
 <h2 id="autoscaling">Autoscaling</h2>
 <p>This is connected to HPA and controls scaling up and down in response to request load</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">autoscaling</span>:
-  <span style="color:#66d9ef">enabled</span>: <span style="color:#66d9ef">false</span>
-  <span style="color:#66d9ef">MinReplicas</span>: <span style="color:#ae81ff">1</span>
-  <span style="color:#66d9ef">MaxReplicas</span>: <span style="color:#ae81ff">2</span>
-  <span style="color:#66d9ef">TargetCPUUtilizationPercentage</span>: <span style="color:#ae81ff">90</span>
-  <span style="color:#66d9ef">TargetMemoryUtilizationPercentage</span>: <span style="color:#ae81ff">80</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">autoscaling</span>:
+  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">false</span>
+  <span style="color:#f92672">MinReplicas</span>: <span style="color:#ae81ff">1</span>
+  <span style="color:#f92672">MaxReplicas</span>: <span style="color:#ae81ff">2</span>
+  <span style="color:#f92672">TargetCPUUtilizationPercentage</span>: <span style="color:#ae81ff">90</span>
+  <span style="color:#f92672">TargetMemoryUtilizationPercentage</span>: <span style="color:#ae81ff">80</span>
 </code></pre></div><table>
 <thead>
 <tr>
@@ -671,18 +671,18 @@ https://github.com/alex-shpak/hugo-book
 </tbody>
 </table>
 <h2 id="image">Image</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">image</span>:
-  <span style="color:#66d9ef">pullPolicy</span>: IfNotPresent
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">image</span>:
+  <span style="color:#f92672">pullPolicy</span>: <span style="color:#ae81ff">IfNotPresent</span>
  
 </code></pre></div><p>Image is used to access images in kubernetes, pullpolicy is used to define the instances calling the image, here the image is pulled when the image is not present,it can also be set as &ldquo;Always&rdquo;.</p>
 <h2 id="ingress">Ingress</h2>
 <p>This allows public access to the url, please ensure you are using right nginx annotation for nginx class, its default value is nginx</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">ingress</span>:
-  <span style="color:#66d9ef">enabled</span>: <span style="color:#66d9ef">false</span>
-  <span style="color:#66d9ef">annotations</span>: {}
-  <span style="color:#66d9ef">path</span>: <span style="color:#e6db74">&#34;&#34;</span>
-  <span style="color:#66d9ef">host</span>: <span style="color:#e6db74">&#34;&#34;</span>
-  <span style="color:#66d9ef">tls</span>: []
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">ingress</span>:
+  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">false</span>
+  <span style="color:#f92672">annotations</span>: {}
+  <span style="color:#f92672">path</span>: <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#f92672">host</span>: <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#f92672">tls</span>: []
 </code></pre></div><table>
 <thead>
 <tr>
@@ -715,12 +715,12 @@ https://github.com/alex-shpak/hugo-book
 </table>
 <h2 id="ingress-internal">Ingress Internal</h2>
 <p>This allows private access to the url, please ensure you are using right nginx annotation for nginx class, its default value is nginx</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">ingressInternal</span>:
-  <span style="color:#66d9ef">enabled</span>: <span style="color:#66d9ef">false</span>
-  <span style="color:#66d9ef">annotations</span>: {}
-  <span style="color:#66d9ef">path</span>: <span style="color:#e6db74">&#34;&#34;</span>
-  <span style="color:#66d9ef">host</span>: <span style="color:#e6db74">&#34;&#34;</span>
-  <span style="color:#66d9ef">tls</span>: []
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">ingressInternal</span>:
+  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">false</span>
+  <span style="color:#f92672">annotations</span>: {}
+  <span style="color:#f92672">path</span>: <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#f92672">host</span>: <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#f92672">tls</span>: []
 </code></pre></div><table>
 <thead>
 <tr>
@@ -753,13 +753,13 @@ https://github.com/alex-shpak/hugo-book
 </table>
 <h2 id="resources">Resources</h2>
 <p>These define minimum and maximum RAM and CPU available to the application</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">resources</span>:
-  <span style="color:#66d9ef">limits</span>:
-    <span style="color:#66d9ef">cpu</span>: <span style="color:#e6db74">&#39;1&#39;</span>
-    <span style="color:#66d9ef">memory</span>: 200Mi
-  <span style="color:#66d9ef">requests</span>:
-    <span style="color:#66d9ef">cpu</span>: <span style="color:#e6db74">&#39;0.10&#39;</span>
-    <span style="color:#66d9ef">memory</span>: 100Mi
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">resources</span>:
+  <span style="color:#f92672">limits</span>:
+    <span style="color:#f92672">cpu</span>: <span style="color:#e6db74">&#39;1&#39;</span>
+    <span style="color:#f92672">memory</span>: <span style="color:#ae81ff">200Mi</span>
+  <span style="color:#f92672">requests</span>:
+    <span style="color:#f92672">cpu</span>: <span style="color:#e6db74">&#39;0.10&#39;</span>
+    <span style="color:#f92672">memory</span>: <span style="color:#ae81ff">100Mi</span>
 </code></pre></div><p>Resources are required to set CPU and memory usage.</p>
 <h3 id="limits">Limits</h3>
 <p>Limits make sure a container never goes above a certain value. The container is only allowed to go up to the limit, and then it is restricted.<!-- raw HTML omitted --></p>
@@ -767,20 +767,20 @@ https://github.com/alex-shpak/hugo-book
 <p>Requests are what the container is guaranteed to get.</p>
 <h2 id="service">Service</h2>
 <p>This defines annotations and the type of service, optionally can define name also</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#66d9ef">service</span>:
-    <span style="color:#66d9ef">type</span>: ClusterIP
-    <span style="color:#66d9ef">annotations</span>: {}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">service</span>:
+    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">ClusterIP</span>
+    <span style="color:#f92672">annotations</span>: {}
 </code></pre></div><h2 id="volumes">Volumes</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"> <span style="color:#66d9ef">volumes</span>: []
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"> <span style="color:#f92672">volumes</span>: []
 </code></pre></div><p>It is required when some values need to be read from or written to an external disk.</p>
 <h2 id="volume-mounts">Volume Mounts</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">volumeMounts</span>: []
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">volumeMounts</span>: []
 </code></pre></div><p>It is used to provide mounts to the volume</p>
 <h2 id="affinity-and-anti-affinity">Affinity and anti-affinity</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">Spec</span>:
-  <span style="color:#66d9ef">Affinity</span>:
-    <span style="color:#66d9ef">Key</span>:
-    <span style="color:#66d9ef">Values</span>:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">Spec</span>:
+  <span style="color:#f92672">Affinity</span>:
+    <span style="color:#f92672">Key</span>:
+    <span style="color:#f92672">Values</span>:
 </code></pre></div><p>Spec is used to define the desire state of the given container.</p>
 <p>Node Affimity allows you to constrain which nodes your pod is eligible to schedule on, based on labels of the node.</p>
 <p>Inter-pod affinity allow you to constrain which nodes your pod is eligible to be scheduled based on labels on pods.</p>
@@ -789,23 +789,23 @@ https://github.com/alex-shpak/hugo-book
 <h3 id="values">Values</h3>
 <p>Value part of the label for node selection, this should be same as that on node. Please confirm with devops team</p>
 <h2 id="tolerations">Tolerations</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">tolerations</span>:
-  <span style="color:#66d9ef">key</span>: <span style="color:#e6db74">&#34;key&#34;</span>
-  <span style="color:#66d9ef">operator</span>: <span style="color:#e6db74">&#34;Equal&#34;</span>
-  <span style="color:#66d9ef">value</span>: <span style="color:#e6db74">&#34;value&#34;</span>
-  <span style="color:#66d9ef">effect</span>: <span style="color:#e6db74">&#34;NoSchedule|PreferNoSchedule|NoExecute(1.6 only)&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">tolerations</span>:
+  <span style="color:#f92672">key</span>: <span style="color:#e6db74">&#34;key&#34;</span>
+  <span style="color:#f92672">operator</span>: <span style="color:#e6db74">&#34;Equal&#34;</span>
+  <span style="color:#f92672">value</span>: <span style="color:#e6db74">&#34;value&#34;</span>
+  <span style="color:#f92672">effect</span>: <span style="color:#e6db74">&#34;NoSchedule|PreferNoSchedule|NoExecute(1.6 only)&#34;</span>
 </code></pre></div><p>Taints are the opposite, they allow a node to repel a set of pods.</p>
 <p>A given pod can access the given node and avoid the given taint only if the given pod satisfies a given taint.</p>
 <p>Taints and tolerations work together to ensure that pods are not scheduled onto the inappropriate nodes. One or more taints can be applied to a node, this marks that the node should not accept any pods that don&rsquo;t tolerate the taints.</p>
 <h2 id="arguments">Arguments</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">args</span>:
-  <span style="color:#66d9ef">enabled</span>: <span style="color:#66d9ef">false</span>
-  <span style="color:#66d9ef">value</span>: []
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">args</span>:
+  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">false</span>
+  <span style="color:#f92672">value</span>: []
 </code></pre></div><p>This is used to give arguments to command</p>
 <h2 id="command">Command</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">command</span>:
-  <span style="color:#66d9ef">enabled</span>: <span style="color:#66d9ef">false</span>
-  <span style="color:#66d9ef">value</span>: []
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">command</span>:
+  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">false</span>
+  <span style="color:#f92672">value</span>: []
 </code></pre></div><p>It contains the commands for the server.</p>
 <table>
 <thead>
@@ -826,20 +826,20 @@ https://github.com/alex-shpak/hugo-book
 </tbody>
 </table>
 <h2 id="prometheus">Prometheus</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#66d9ef">prometheus</span>:
-    <span style="color:#66d9ef">release</span>: monitoring
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">prometheus</span>:
+    <span style="color:#f92672">release</span>: <span style="color:#ae81ff">monitoring</span>
 </code></pre></div><p>It is a kubernetes monitoring tool and the name of the file to be monitored as monitoring in the given case.It describes the state of the prometheus.</p>
 <h2 id="grace-period">Grace Period</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">GracePeriod</span>: <span style="color:#ae81ff">30</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">GracePeriod</span>: <span style="color:#ae81ff">30</span>
 </code></pre></div><p>If it has expired then the task is requeued to be executed again.</p>
 <h2 id="min-ready-seconds">Min Ready Seconds</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">MinReadySeconds</span>: <span style="color:#ae81ff">60</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">MinReadySeconds</span>: <span style="color:#ae81ff">60</span>
 </code></pre></div><p>Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available</p>
 <h2 id="server">Server</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">server</span>:
-  <span style="color:#66d9ef">deployment</span>:
-    <span style="color:#66d9ef">image_tag</span>: <span style="color:#ae81ff">1</span>-95a53
-    <span style="color:#66d9ef">image</span>: <span style="color:#e6db74">&#34;&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">server</span>:
+  <span style="color:#f92672">deployment</span>:
+    <span style="color:#f92672">image_tag</span>: <span style="color:#ae81ff">1</span>-<span style="color:#ae81ff">95a53</span>
+    <span style="color:#f92672">image</span>: <span style="color:#e6db74">&#34;&#34;</span>
 </code></pre></div><p>It is used for providing server configurations.</p>
 <h3 id="deployment">Deployment</h3>
 <p>It gives the details for deployment</p>
@@ -862,21 +862,21 @@ https://github.com/alex-shpak/hugo-book
 </tbody>
 </table>
 <h2 id="service-monitor">Service Monitor</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">servicemonitor</span>:
-      <span style="color:#66d9ef">enabled</span>: <span style="color:#66d9ef">true</span>
-      <span style="color:#66d9ef">path</span>: /abc
-      <span style="color:#66d9ef">scheme</span>: <span style="color:#e6db74">&#39;http&#39;</span>
-      <span style="color:#66d9ef">interval</span>: 30s
-      <span style="color:#66d9ef">scrapeTimeout</span>: 20s
-      <span style="color:#66d9ef">metricRelabelings</span>:
-        - <span style="color:#66d9ef">sourceLabels</span>: [namespace]
-          <span style="color:#66d9ef">regex</span>: <span style="color:#e6db74">&#39;(.*)&#39;</span>
-          <span style="color:#66d9ef">replacement</span>: myapp
-          <span style="color:#66d9ef">targetLabel</span>: target_namespace
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">servicemonitor</span>:
+      <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
+      <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/abc</span>
+      <span style="color:#f92672">scheme</span>: <span style="color:#e6db74">&#39;http&#39;</span>
+      <span style="color:#f92672">interval</span>: <span style="color:#ae81ff">30s</span>
+      <span style="color:#f92672">scrapeTimeout</span>: <span style="color:#ae81ff">20s</span>
+      <span style="color:#f92672">metricRelabelings</span>:
+        - <span style="color:#f92672">sourceLabels</span>: [<span style="color:#ae81ff">namespace]</span>
+          <span style="color:#f92672">regex</span>: <span style="color:#e6db74">&#39;(.*)&#39;</span>
+          <span style="color:#f92672">replacement</span>: <span style="color:#ae81ff">myapp</span>
+          <span style="color:#f92672">targetLabel</span>: <span style="color:#ae81ff">target_namespace</span>
 </code></pre></div><p>It gives the set of targets to be monitored.</p>
 <h2 id="db-migration-config">Db Migration Config</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">dbMigrationConfig</span>:
-  <span style="color:#66d9ef">enabled</span>: <span style="color:#66d9ef">false</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">dbMigrationConfig</span>:
+  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">false</span>
 </code></pre></div><p>It is used to configure database migration</p>
 <h2 id="application-metrics">Application Metrics</h2>
 <p>Application metrics can be enabled to see your application&rsquo;s metrics-CPUService Monito usage,Memory Usage,Status,Throughput and Latency.</p>
@@ -884,14 +884,14 @@ https://github.com/alex-shpak/hugo-book
 <p>A deployment strategy is a way to make changes to your application, without downtime in a way that your application user barely notices the changes. There are different types of deployment strategies. To know about Deployment Strategies, Click on: <a href="https://docs.devtron.ai/docs/reference/creating-application/workflows/cd-pipelines/#deployment-strategies">Types of Deployment Strategies</a></p>
 <h1 id="add-on-features-in-deployment-chart-version-390">Add on features in Deployment Chart version 3.9.0</h1>
 <h2 id="service-account">Service Account</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">serviceAccountName</span>: orchestrator
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">serviceAccountName</span>: <span style="color:#ae81ff">orchestrator</span>
 </code></pre></div><p>A service account provides an identity for the processes that run in a Pod.</p>
 <p>When you access the cluster, you are authenticated by the apiserver as a particular User Account. Processes in containers inside pod can also contact the apiserver. When you are authenticated as a particular Service Account.</p>
 <p>When you create a pod, if you do not create a service account, it is automatically assigned the default service account in the namespace.</p>
 <h2 id="pod-disruption-budget">Pod Disruption Budget</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">podDisruptionBudget</span>: {}
-     <span style="color:#66d9ef">minAvailable</span>: <span style="color:#ae81ff">1</span>
-     <span style="color:#66d9ef">maxUnavailable</span>: <span style="color:#ae81ff">1</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">podDisruptionBudget</span>: {}
+     <span style="color:#f92672">minAvailable</span>: <span style="color:#ae81ff">1</span>
+     <span style="color:#f92672">maxUnavailable</span>: <span style="color:#ae81ff">1</span>
 </code></pre></div><p>You can create <code>PodDisruptionBudget</code> for each application. A PDB limits the number of pods of
 a replicated application that are down simultaneously from voluntary disruptions.
 For example, an application would like to ensure the number of replicas running is never brought below the certain number.</p>
@@ -899,40 +899,40 @@ For example, an application would like to ensure the number of replicas running 
 <p>With <code>minAvailable</code> of 1, evictions are allowed as long as they leave behind 1 or more healthy pods of the total number of desired replicas.</p>
 <p>With <code>maxAvailable</code> of 1, evictions are allowed as long as atmost 1 unhealthy replica among the total number of desired replicas.</p>
 <h2 id="application-metrics-envoy-configurations">Application metrics Envoy Configurations</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">envoyproxy</span>:
-  <span style="color:#66d9ef">image</span>: envoyproxy/envoy:v1<span style="color:#ae81ff">.14.1</span>
-  <span style="color:#66d9ef">configMapName</span>: <span style="color:#e6db74">&#34;&#34;</span>
-  <span style="color:#66d9ef">resources</span>:
-    <span style="color:#66d9ef">limits</span>:
-      <span style="color:#66d9ef">cpu</span>: 50m
-      <span style="color:#66d9ef">memory</span>: 50Mi
-    <span style="color:#66d9ef">requests</span>:
-      <span style="color:#66d9ef">cpu</span>: 50m
-      <span style="color:#66d9ef">memory</span>: 50Mi
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">envoyproxy</span>:
+  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">envoyproxy/envoy:v1.14.1</span>
+  <span style="color:#f92672">configMapName</span>: <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#f92672">resources</span>:
+    <span style="color:#f92672">limits</span>:
+      <span style="color:#f92672">cpu</span>: <span style="color:#ae81ff">50m</span>
+      <span style="color:#f92672">memory</span>: <span style="color:#ae81ff">50Mi</span>
+    <span style="color:#f92672">requests</span>:
+      <span style="color:#f92672">cpu</span>: <span style="color:#ae81ff">50m</span>
+      <span style="color:#f92672">memory</span>: <span style="color:#ae81ff">50Mi</span>
 </code></pre></div><p>Envoy is attached as a sidecar to the application container to collect metrics like 4XX, 5XX, Throughput and latency. You can now configure the envoy settings such as idleTimeout, resources etc.</p>
 <h2 id="prometheus-rule">Prometheus Rule</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">prometheusRule</span>:
-  <span style="color:#66d9ef">enabled</span>: <span style="color:#66d9ef">true</span>
-  <span style="color:#66d9ef">additionalLabels</span>: {}
-  <span style="color:#66d9ef">namespace</span>: <span style="color:#e6db74">&#34;&#34;</span>
-  <span style="color:#66d9ef">rules</span>:
-    - <span style="color:#66d9ef">alert</span>: TooMany500s
-      <span style="color:#66d9ef">expr</span>: <span style="color:#ae81ff">100</span> * ( sum( nginx_ingress_controller_requests{status=~<span style="color:#e6db74">&#34;5.+&#34;</span>} ) / sum(nginx_ingress_controller_requests) ) &gt; <span style="color:#ae81ff">5</span>
-      <span style="color:#66d9ef">for</span>: 1m
-      <span style="color:#66d9ef">labels</span>:
-        <span style="color:#66d9ef">severity</span>: critical
-      <span style="color:#66d9ef">annotations</span>:
-        <span style="color:#66d9ef">description</span>: Too many 5XXs
-        <span style="color:#66d9ef">summary</span>: More than <span style="color:#ae81ff">5</span>% of the all requests did return 5XX, this require your attention
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">prometheusRule</span>:
+  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#f92672">additionalLabels</span>: {}
+  <span style="color:#f92672">namespace</span>: <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#f92672">rules</span>:
+    - <span style="color:#f92672">alert</span>: <span style="color:#ae81ff">TooMany500s</span>
+      <span style="color:#f92672">expr</span>: <span style="color:#ae81ff">100</span> * <span style="color:#ae81ff">( sum( nginx_ingress_controller_requests{status=~&#34;5.+&#34;} ) / sum(nginx_ingress_controller_requests) ) &gt; 5</span>
+      <span style="color:#f92672">for</span>: <span style="color:#ae81ff">1m</span>
+      <span style="color:#f92672">labels</span>:
+        <span style="color:#f92672">severity</span>: <span style="color:#ae81ff">critical</span>
+      <span style="color:#f92672">annotations</span>:
+        <span style="color:#f92672">description</span>: <span style="color:#ae81ff">Too many 5XXs</span>
+        <span style="color:#f92672">summary</span>: <span style="color:#ae81ff">More than 5% of the all requests did return 5XX, this require your attention</span>
 </code></pre></div><p>Alerting rules allow you to define alert conditions based on Prometheus expressions and to send notifications about firing alerts to an external service.</p>
 <p>In this case, Prometheus will check that the alert continues to be active during each evaluation for 1 minute before firing the alert. Elements that are active, but not firing yet, are in the pending state.</p>
 <h2 id="custom-metrics-in-hpa">Custom Metrics in HPA</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">autoscaling</span>:
-  <span style="color:#66d9ef">enabled</span>: <span style="color:#66d9ef">true</span>
-  <span style="color:#66d9ef">MinReplicas</span>: <span style="color:#ae81ff">1</span>
-  <span style="color:#66d9ef">MaxReplicas</span>: <span style="color:#ae81ff">2</span>
-  <span style="color:#66d9ef">TargetCPUUtilizationPercentage</span>: <span style="color:#ae81ff">90</span>
-  <span style="color:#66d9ef">TargetMemoryUtilizationPercentage</span>: <span style="color:#ae81ff">80</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">autoscaling</span>:
+  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#f92672">MinReplicas</span>: <span style="color:#ae81ff">1</span>
+  <span style="color:#f92672">MaxReplicas</span>: <span style="color:#ae81ff">2</span>
+  <span style="color:#f92672">TargetCPUUtilizationPercentage</span>: <span style="color:#ae81ff">90</span>
+  <span style="color:#f92672">TargetMemoryUtilizationPercentage</span>: <span style="color:#ae81ff">80</span>
 </code></pre></div><p>HPA will be able to give metrics such as CPU and memory usage for cluster nodes or any of the pods. These metrics are useful for internal cluster sizing, but you probably want to configure wider set of metrics like service latency, I/O load etc.<br>
 The custom metrics in HPA can help you to achieve this.</p>
 </article>
