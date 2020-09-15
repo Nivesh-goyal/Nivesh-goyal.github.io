@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Git Material Git material is used to manage the source code repositories of your application.
+  Multi Git/Checkout Path Checkout path is directory under which your code is pulled for that repository. It is independent of Multi Git, even while using single Git Repository you can provide the Git Checkout Path.
+  In the given example, if the configuration files of the repository are kept in some other Git Repository and source code is kept in the given Git Repository, the path of the repository where Configuration files are kept will be given in Multi Git Checkout Path so that your Docker File can use the Configuration files cloned from the other Git Repository."><meta property="og:title" content="Git Material" />
+<meta property="og:description" content="Git Material Git material is used to manage the source code repositories of your application.
+  Multi Git/Checkout Path Checkout path is directory under which your code is pulled for that repository. It is independent of Multi Git, even while using single Git Repository you can provide the Git Checkout Path.
+  In the given example, if the configuration files of the repository are kept in some other Git Repository and source code is kept in the given Git Repository, the path of the repository where Configuration files are kept will be given in Multi Git Checkout Path so that your Docker File can use the Configuration files cloned from the other Git Repository." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.niveshopstree.tk/docs/reference/creating-application/git-material/" />
+
+<title>Git Material | Devtron Labs</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
+<script defer src="/en.search.min.4aec94c96fbed0325c53ba1c404f41440ba4dcbe45655100472638a0cdb40099.js" integrity="sha256-SuyUyW&#43;&#43;0DJcU7ocQE9BRAuk3L5FZVEARyY4oM20AJk="></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-154884741-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Devtron Labs</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <strong><ul id="book-search-results"></ul></strong>
+</div>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <span>Reference</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/creating-application/" class="collapsed ">Creating Application</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/creating-application/git-material/" class="active">Git Material</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/creating-application/docker-configuration/" class="">Docker Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/creating-application/deployment-template/" class="">Deployment Template</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/creating-application/workflows/" class="collapsed ">Workflows</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/creating-application/config-maps/" class="">Config Maps</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/creating-application/secrets/" class="">Secrets</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/creating-application/environment-overrides/" class="">Environment Overrides</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/cloning-applications/" class="">Cloning Applications</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/deploying-applications/" class="collapsed ">Deploying Applications</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/deploy-chart/" class="collapsed ">Deploy Chart</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/debugging-deployments-and-monitoring/" class="">Debugging Deployments and Monitoring</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/namespaces-and-environments-/" class="">Namespaces and Environments </a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/global-configurations/" class="collapsed ">Global Configurations</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/deleting-applications/" class="">Deleting Applications</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/use-cases/" class="collapsed ">Use Cases</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li><b>
+   <b> <a href="/posts/" >
+         
+      </a></b>
+  </li></b>
+  
+</ul>
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Git Material</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#multi-gitcheckout-path">Multi Git/Checkout Path</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="git-material">Git Material</h1>
+<p>Git material is used to manage the source code repositories of your application.</p>
+<p> </p>
+<p><img src="../../move1.gif#floatright" alt="git Material" /></p>
+<p>  </p>
+<h2 id="multi-gitcheckout-path">Multi Git/Checkout Path</h2>
+<p>Checkout path is directory under which your code is pulled for that repository. It is independent of Multi Git, even while using single Git Repository you can provide the Git Checkout Path.</p>
+<p>  </p>
+<p><img src="../../git_material2.jpg" alt="alt text" title="Adding multiple git materials"/></p>
+<p>  </p>
+<p>In the given example, if the configuration files of the repository are kept in some other Git Repository and source code is kept in the given Git Repository, the path of the repository where Configuration files are kept will be given in <code>Multi Git Checkout Path</code> so that your Docker File can use the Configuration files cloned from the other Git Repository.</p>
+<p>If any changes are made to the source code repository or the repository which contains the configuration files then the CI will be triggered and the image file of both the repositories will be built and pushed to the ECR repository.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#multi-gitcheckout-path">Multi Git/Checkout Path</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

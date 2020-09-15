@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devtron Labs</title>
+    <link>https://www.niveshopstree.tk/docs/reference/creating-application/</link>
+    <description>Recent content on Devtron Labs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.niveshopstree.tk/docs/reference/creating-application/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git Material</title>
+      <link>https://www.niveshopstree.tk/docs/reference/creating-application/git-material/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.niveshopstree.tk/docs/reference/creating-application/git-material/</guid>
+      <description>Git Material Git material is used to manage the source code repositories of your application.
+  Multi Git/Checkout Path Checkout path is directory under which your code is pulled for that repository. It is independent of Multi Git, even while using single Git Repository you can provide the Git Checkout Path.
+  In the given example, if the configuration files of the repository are kept in some other Git Repository and source code is kept in the given Git Repository, the path of the repository where Configuration files are kept will be given in Multi Git Checkout Path so that your Docker File can use the Configuration files cloned from the other Git Repository.</description>
+    </item>
+    
+    <item>
+      <title>Docker Configuration</title>
+      <link>https://www.niveshopstree.tk/docs/reference/creating-application/docker-configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.niveshopstree.tk/docs/reference/creating-application/docker-configuration/</guid>
+      <description>Docker build Configuration Docker Build Configuration is required to execute CI Pipeline for your application.
+     Key Description     Repository Select the path of the Repository   Docker File Path Give a Relative Path for your Dockerfile   Docker Registry Select the Docker Registry you wish to use, which will be used to store distributed images.   Docker Repository Name of your Docker Repository that will store collection of related images usually providing different version of the same application.</description>
+    </item>
+    
+    <item>
+      <title>Deployment Template</title>
+      <link>https://www.niveshopstree.tk/docs/reference/creating-application/deployment-template/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.niveshopstree.tk/docs/reference/creating-application/deployment-template/</guid>
+      <description>Deployment Configurations It is required to execute deployment pipelines for your application.
+     Key Descriptions     Chart Version Select the Chart Version using which you want to deploy the application.    If you want to see Application Metrics (For example: Status codes 2xx, 3xx, 5xx; throughput and latency) over time for your application, then you need to make sure you select the latest chart version.</description>
+    </item>
+    
+  </channel>
+</rss>

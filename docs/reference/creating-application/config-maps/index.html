@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ConfigMaps The ConfigMap API resource holds key-value pairs of configuration data that can be consumed in pods or used to store configuration data for system components such as controllers. ConfigMap is similar to Secrets, but designed to more conveniently support working with strings that do not contain sensitive information.
+Click on Add ConfigMap to add a config map to your application.
+  Configure the ConfigMap      Key Description     Data Type(Kubernetes ConfigMap) ConfigMap that is created by Devtron."><meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.niveshopstree.tk/docs/reference/creating-application/config-maps/" />
+
+<title>Config Maps | Devtron Labs</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
+<script defer src="/en.search.min.4aec94c96fbed0325c53ba1c404f41440ba4dcbe45655100472638a0cdb40099.js" integrity="sha256-SuyUyW&#43;&#43;0DJcU7ocQE9BRAuk3L5FZVEARyY4oM20AJk="></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-154884741-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<link rel="alternate" type="application/rss+xml" href="https://www.niveshopstree.tk/docs/reference/creating-application/config-maps/index.xml" title="Devtron Labs" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Devtron Labs</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <strong><ul id="book-search-results"></ul></strong>
+</div>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <span>Reference</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/creating-application/" class="collapsed ">Creating Application</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/creating-application/git-material/" class="">Git Material</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/creating-application/docker-configuration/" class="">Docker Configuration</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/creating-application/deployment-template/" class="">Deployment Template</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/creating-application/workflows/" class="collapsed ">Workflows</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/creating-application/config-maps/" class="active">Config Maps</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/creating-application/secrets/" class="">Secrets</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/creating-application/environment-overrides/" class="">Environment Overrides</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/cloning-applications/" class="">Cloning Applications</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/deploying-applications/" class="collapsed ">Deploying Applications</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/deploy-chart/" class="collapsed ">Deploy Chart</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/debugging-deployments-and-monitoring/" class="">Debugging Deployments and Monitoring</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/namespaces-and-environments-/" class="">Namespaces and Environments </a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/global-configurations/" class="collapsed ">Global Configurations</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/deleting-applications/" class="">Deleting Applications</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/use-cases/" class="collapsed ">Use Cases</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li><b>
+   <b> <a href="/posts/" >
+         
+      </a></b>
+  </li></b>
+  
+</ul>
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Config Maps</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#configmaps">ConfigMaps</a>
+      <ul>
+        <li><a href="#configure-the-configmap">Configure the ConfigMap</a></li>
+        <li><a href="#volume-mount-path">Volume Mount Path</a></li>
+        <li><a href="#kubernetes-external-configmap">Kubernetes External ConfigMap</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h2 id="configmaps">ConfigMaps</h2>
+<p>The ConfigMap API resource holds key-value pairs of configuration data that can be consumed in pods or used to store configuration data for system components such as controllers. ConfigMap is similar to Secrets, but designed to more conveniently support working with strings that do not contain sensitive information.</p>
+<p>Click on <code>Add ConfigMap</code> to add a config map to your application.</p>
+<p>  </p>
+<p><img src="../../cf1.jpg" alt="Config Map" title="Create config map"/></p>
+<p>  </p>
+<h3 id="configure-the-configmap">Configure the ConfigMap</h3>
+<p>  </p>
+<p><img src="../../config1.jpg" alt="Config Map" title="Create config map"/></p>
+<p>  </p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Data Type(Kubernetes ConfigMap)</code></td>
+<td>ConfigMap that is created by Devtron.</td>
+</tr>
+<tr>
+<td><code>Name</code></td>
+<td>Name of ConfigMap.</td>
+</tr>
+<tr>
+<td><code>Environment Variable</code></td>
+<td>Select if there are Environment Variables to be injected in pods.</td>
+</tr>
+<tr>
+<td><code>Data Volume</code></td>
+<td>Specify, if there is a volume that is accessible to Containers running in a pod needs to be added.</td>
+</tr>
+<tr>
+<td><code>Key</code></td>
+<td>Key.</td>
+</tr>
+<tr>
+<td><code>Value</code></td>
+<td>Value for a given key.</td>
+</tr>
+</tbody>
+</table>
+<p><!-- raw HTML omitted --></p>
+<p>You can Click on &ldquo;YAML&rdquo; or &ldquo;GUI&rdquo; to view the key and Value parameters of the ConfigMap that you have created.</p>
+<p><!-- raw HTML omitted --></p>
+<h3 id="volume-mount-path">Volume Mount Path</h3>
+<p>Specify Volume Mount folder path in <code>Volume Mount Path</code>, path where the data volume needs to be mounted, which will be accessible to the Containers running in a pod.</p>
+<p>You can Select the Data Type as <code>Kubernetes ConfigMap</code> if you wish to use the ConfigMap created by Devtron or <code>Kubernetes External ConfigMap </code> if you have created a ConfigMap using Kubectl command.</p>
+<p>  </p>
+<p><img src="../../config2.jpg" alt="Data Volume" title="Data Volume"/></p>
+<p><!-- raw HTML omitted --></p>
+<p>Click <code>Save ConfigMap</code> to save the configMap.</p>
+<p><!-- raw HTML omitted --></p>
+<h3 id="kubernetes-external-configmap">Kubernetes External ConfigMap</h3>
+<p>Kubernetes External ConfigMap is created using <code>kubectl create configmap</code> or you can use ConfigMap generator in kustomization.yaml to create a ConfigMap.</p>
+<p>If you are using Kubernetes External ConfigMap make sure you give the name of ConfigMap same as the name that you have given using <code>kubectl create Configmap &lt;configmap-name&gt; &lt;data source&gt;</code> command, otherwise it might result in error during the built.</p>
+<p>You have to ensure that the External ConfigMap exists and is made available to the pod.</p>
+<p>  </p>
+<p><img src="../../config4.jpg" alt="Config Map Added" title="Config Map is added"/></p>
+<p><!-- raw HTML omitted -->
+The config map is created.</p>
+<p>  </p>
+<p><img src="../../arora2.gif" alt="Config Map Added" title="Config Map is added"/></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#configmaps">ConfigMaps</a>
+      <ul>
+        <li><a href="#configure-the-configmap">Configure the ConfigMap</a></li>
+        <li><a href="#volume-mount-path">Volume Mount Path</a></li>
+        <li><a href="#kubernetes-external-configmap">Kubernetes External ConfigMap</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

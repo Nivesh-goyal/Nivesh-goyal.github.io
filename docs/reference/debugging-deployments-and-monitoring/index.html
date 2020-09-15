@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Debugging Deployments And Monitoring Debugging Deployments If the deployment your application is not successful, then debugging needs to be done to check the cause of the error.
+This can be done through App Details section which you can access in the following way:-
+Applications-&gt;AppName-&gt;App Details
+Over here, you can see the status of the app as Healthy. If there are some errors with deployment then the status would not be in a Healthy state."><meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.niveshopstree.tk/docs/reference/debugging-deployments-and-monitoring/" />
+
+<title>Debugging Deployments and Monitoring | Devtron Labs</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
+<script defer src="/en.search.min.4aec94c96fbed0325c53ba1c404f41440ba4dcbe45655100472638a0cdb40099.js" integrity="sha256-SuyUyW&#43;&#43;0DJcU7ocQE9BRAuk3L5FZVEARyY4oM20AJk="></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-154884741-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<link rel="alternate" type="application/rss+xml" href="https://www.niveshopstree.tk/docs/reference/debugging-deployments-and-monitoring/index.xml" title="Devtron Labs" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Devtron Labs</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <strong><ul id="book-search-results"></ul></strong>
+</div>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <span>Reference</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/creating-application/" class="collapsed ">Creating Application</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/cloning-applications/" class="">Cloning Applications</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/deploying-applications/" class="collapsed ">Deploying Applications</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/deploy-chart/" class="collapsed ">Deploy Chart</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/debugging-deployments-and-monitoring/" class="active">Debugging Deployments and Monitoring</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/namespaces-and-environments-/" class="">Namespaces and Environments </a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/global-configurations/" class="collapsed ">Global Configurations</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/reference/deleting-applications/" class="">Deleting Applications</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/use-cases/" class="collapsed ">Use Cases</a>
+  
+
+          
+  
+  
+  
+
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li><b>
+   <b> <a href="/posts/" >
+         
+      </a></b>
+  </li></b>
+  
+</ul>
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Debugging Deployments and Monitoring</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#debugging-deployments">Debugging Deployments</a>
+      <ul>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#logs">Logs</a></li>
+        <li><a href="#manifest">Manifest</a></li>
+        <li><a href="#deleting-pods">Deleting Pods</a></li>
+        <li><a href="#application-objects">Application Objects</a></li>
+      </ul>
+    </li>
+    <li><a href="#monitoring">Monitoring</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="debugging-deployments-and-monitoring">Debugging Deployments And Monitoring</h1>
+<h2 id="debugging-deployments">Debugging Deployments</h2>
+<p>If the deployment your application is not successful, then debugging needs to be done to check the cause of the error.</p>
+<p>This can be done through <strong>App Details</strong> section which you can access in the following way:-</p>
+<p>Applications-&gt;AppName-&gt;App Details</p>
+<p>Over here, you can see the status of the app as Healthy. If there are some errors with deployment then the status would not be in a Healthy state.</p>
+<h3 id="events">Events</h3>
+<p>  </p>
+<p><img src="../events1.jpg" alt="Debuggind Deployment" title="Debuggind Deployment"/></p>
+<p>  </p>
+<p>Events of the application are accessible from the bottom left corner.</p>
+<p><!-- raw HTML omitted --></p>
+<p>Events section displays you the events that took place during the deployment of an app. These events are available until 15 minutes of deployment of the application.</p>
+<h3 id="logs">Logs</h3>
+<p>  </p>
+<p><img src="../events2.jpg" alt="Debuggind Deployment" title="Debuggind Deployment"/></p>
+<p>  </p>
+<p>Logs contain the logs of the Pods and Containers deployed which you can use for the process of debugging.</p>
+<h3 id="manifest">Manifest</h3>
+<p>  </p>
+<p><img src="../events3.jpg" alt="Debuggind Deployment" title="Debuggind Deployment"/></p>
+<p>  </p>
+<p><!-- raw HTML omitted --></p>
+<p>The Manifest shows the critical information such as Container-image, restartCount, state, phase, podIP, startTime etc. and status of the pods deployed.</p>
+<h3 id="deleting-pods">Deleting Pods</h3>
+<p>  </p>
+<p><img src="../events5.png" alt="Debugging Deployment" title="Debuggind Deployment"/></p>
+<p>  </p>
+<p>You might run into a situation where you need to delete Pods. You may need to bounce or restart a pod.</p>
+<p>Deleting a Pod is not an irksome task, it can simply be deleted by Clicking on <code>Delete Pod</code>.</p>
+<p>Suppose you want to setup a new environment, you can delete a pod and thereafter a new pod will be created automatically depending upon the replica count.</p>
+<h3 id="application-objects">Application Objects</h3>
+<p>You can view <code>Application Objects</code> in this section of <code>App Details</code>, such as:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Workloads</code></td>
+<td><em>ReplicaSet</em>(ensures how many replica of pod should be running), <em>Status of Pod</em>(status of the Pod)</td>
+</tr>
+<tr>
+<td><code>Networking</code></td>
+<td><em>Service</em>(an abstraction which defines a logical set of Pods), <em>Endpoints</em>(names of the endpoints that implement a Service), <em>Ingress</em>(API object that manages external access to the services in a cluster)</td>
+</tr>
+<tr>
+<td><code>Config &amp; Storage</code></td>
+<td><em>ConfigMap</em>( API object used to store non-confidential data in key-value pairs)</td>
+</tr>
+<tr>
+<td><code>Custom Resource</code></td>
+<td><em>Rollout</em>(new Pods will be scheduled on Nodes with available resources), <em>ServiceMonitor</em>(specifies how groups of services should be monitored)</td>
+</tr>
+</tbody>
+</table>
+<p>  </p>
+<p><img src="../events6.png" alt="Debugging Deployment" title="Debuggind Deployment"/></p>
+<p>  </p>
+<p><!-- raw HTML omitted --></p>
+<h2 id="monitoring">Monitoring</h2>
+<p>  </p>
+<p><img src="../events4.jpg" alt="Debuggind Deployment" title="Debuggind Deployment"/></p>
+<p>  </p>
+<p>You can monitor the application in the <code>App Details</code>section.</p>
+<p>Metrics like CPU Usage, Memory Usage, Throughput and Latency can be viewed here.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CPU Usage</code></td>
+<td>Percentage of CPU&rsquo;s cycles used by the app.</td>
+</tr>
+<tr>
+<td><code>Memory Usage</code></td>
+<td>Amount of memory used by app.</td>
+</tr>
+<tr>
+<td><code>Throughput</code></td>
+<td>Performance of the app.</td>
+</tr>
+<tr>
+<td><code>Latency</code></td>
+<td>Delay caused while transmitting the data.</td>
+</tr>
+</tbody>
+</table>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#debugging-deployments">Debugging Deployments</a>
+      <ul>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#logs">Logs</a></li>
+        <li><a href="#manifest">Manifest</a></li>
+        <li><a href="#deleting-pods">Deleting Pods</a></li>
+        <li><a href="#application-objects">Application Objects</a></li>
+      </ul>
+    </li>
+    <li><a href="#monitoring">Monitoring</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
