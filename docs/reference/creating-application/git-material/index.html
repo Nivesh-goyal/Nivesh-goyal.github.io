@@ -4,19 +4,23 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Git Material Git material is used to manage the source code repositories of your application.
-  Multi Git/Checkout Path Checkout path is directory under which your code is pulled for that repository. It is independent of Multi Git, even while using single Git Repository you can provide the Git Checkout Path.
-  In the given example, if the configuration files of the repository are kept in some other Git Repository and source code is kept in the given Git Repository, the path of the repository where Configuration files are kept will be given in Multi Git Checkout Path so that your Docker File can use the Configuration files cloned from the other Git Repository."><meta property="og:title" content="Git Material" />
-<meta property="og:description" content="Git Material Git material is used to manage the source code repositories of your application.
-  Multi Git/Checkout Path Checkout path is directory under which your code is pulled for that repository. It is independent of Multi Git, even while using single Git Repository you can provide the Git Checkout Path.
-  In the given example, if the configuration files of the repository are kept in some other Git Repository and source code is kept in the given Git Repository, the path of the repository where Configuration files are kept will be given in Multi Git Checkout Path so that your Docker File can use the Configuration files cloned from the other Git Repository." />
+<meta name="description" content="Git Material Git material is used to pull the application source code during the CI step. Inside git material when you click on Add material you will see three options as shown below:
+  Select Provider
+  Git Repo URL
+  Checkout Path
+  Devtron also supports multiple git repositories in a single deployment. We will discuss this in detail in the multi git option below."><meta property="og:title" content="Git Material" />
+<meta property="og:description" content="Git Material Git material is used to pull the application source code during the CI step. Inside git material when you click on Add material you will see three options as shown below:
+  Select Provider
+  Git Repo URL
+  Checkout Path
+  Devtron also supports multiple git repositories in a single deployment. We will discuss this in detail in the multi git option below." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.niveshopstree.tk/docs/reference/creating-application/git-material/" />
 
 <title>Git Material | Devtron Labs tutorial</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
-<script defer src="/en.search.min.9af1749fcaa7bfe28cd876952a1ec576100b8965fdf848545e552bf43316b547.js" integrity="sha256-mvF0n8qnv&#43;KM2HaVKh7FdhALiWX9&#43;EhUXlUr9DMWtUc="></script>
+<script defer src="/en.search.min.daabb339d310201fc79efea78eb5342c516d764271ee02fb679b516c4ada8600.js" integrity="sha256-2quzOdMQIB/Hnv6njrU0LFFtdkJx7gL7Z5tRbErahgA="></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -440,7 +444,10 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#multi-gitcheckout-path">Multi Git/Checkout Path</a></li>
+    <li><a href="#1-select-provider">1. Select Provider</a></li>
+    <li><a href="#2-git-repo-url">2. Git Repo URL</a></li>
+    <li><a href="#3-checkout-pathgithub_urlpng-github-repo-url">3. Checkout Path(./github_url.png &ldquo;GitHub repo URL&rdquo;)</a></li>
+    <li><a href="#4-multi-git">4. Multi Git</a></li>
   </ul>
 </nav>
 
@@ -453,17 +460,41 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown"><h1 id="git-material">Git Material</h1>
-<p>Git material is used to manage the source code repositories of your application.</p>
+<p>Git material is used to pull the application source code during the CI step. Inside git material when you click on <code>Add material</code> you will see three options as shown below:</p>
+<ol>
+<li>
+<p>Select Provider</p>
+</li>
+<li>
+<p>Git Repo URL</p>
+</li>
+<li>
+<p>Checkout Path</p>
+</li>
+</ol>
+<p>Devtron also supports multiple git repositories in a single deployment. We will discuss this in detail in the multi git option below.</p>
 <p> </p>
 <p><img src="../../move1.gif#floatright" alt="git Material" /></p>
 <p>  </p>
-<h2 id="multi-gitcheckout-path">Multi Git/Checkout Path</h2>
-<p>Checkout path is directory under which your code is pulled for that repository. It is independent of Multi Git, even while using single Git Repository you can provide the Git Checkout Path.</p>
+<h2 id="1-select-provider">1. Select Provider</h2>
+<p>In the provider section, you have to select the git provider of your code repository like- Github, Gitlab, and Bitbucket, etc.</p>
+<h2 id="2-git-repo-url">2. Git Repo URL</h2>
+<p>Inside the git repo URL, you have to provide your code repository’s https URL. For Example- <a href="https://github.com/Username/Repo_name.git">https://github.com/Username/Repo_name.git</a></p>
+<p>![Repo-URLimage]</p>
+<h2 id="3-checkout-pathgithub_urlpng-github-repo-url">3. Checkout Path(./github_url.png &ldquo;GitHub repo URL&rdquo;)</h2>
+<p>The git checkout path is the directory where your code is pulled or cloned for the repository provided in the previous step.</p>
+<p>This field is optional in case of a single git repository application and you can leave the path as default. The default value of this field is <code>./</code></p>
+<p>But if you want to go with a multi git approach then you can leave the path as default for one of the repository but for other repositories you have to provide this path. In multi git checkout, this checkout path becomes mandatory for other repositories</p>
 <p>  </p>
 <p><img src="../../git_material2.jpg" alt="alt text" title="Adding multiple git materials"/></p>
 <p>  </p>
-<p>In the given example, if the configuration files of the repository are kept in some other Git Repository and source code is kept in the given Git Repository, the path of the repository where Configuration files are kept will be given in <code>Multi Git Checkout Path</code> so that your Docker File can use the Configuration files cloned from the other Git Repository.</p>
-<p>If any changes are made to the source code repository or the repository which contains the configuration files then the CI will be triggered and the image file of both the repositories will be built and pushed to the ECR repository.</p>
+<h2 id="4-multi-git">4. Multi Git</h2>
+<p>As we discussed, Devtron also supports multiple git repositories in a single application. To add multiple repositories, click on add material again and follow the steps from 1 to 3 again.</p>
+<p>Please note even though you can add multiple repositories only one image will be created based on the docker file as shown in the <a href="https://www.niveshopstree.tk/docs/reference/creating-application/docker-configuration/">docker build config</a>.</p>
+<p>Why do we need MultiGit support-</p>
+<p>Let’s try to understand this with an example. Due to security reasons, you may want to keep sensitive configuration like third party API keys in separate access restricted git repository and source code in a git repository on which every developer has access. To deploy this application both repositories code is required and multi-git will help you to do that.</p>
+<p>Provide a different checkout path for both the repositories, if different repositories are provided the same checkout path then files from different repositories can overwrite each other. These checkout paths will be used by the docker file to create a docker image.</p>
+<p>If any change is pushed to the configured repositories then the CI will be triggered and the image file will be built based on the latest commits of the configured repositories and pushed to the docker registry.</p>
 </article>
  
       
@@ -498,7 +529,10 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#multi-gitcheckout-path">Multi Git/Checkout Path</a></li>
+    <li><a href="#1-select-provider">1. Select Provider</a></li>
+    <li><a href="#2-git-repo-url">2. Git Repo URL</a></li>
+    <li><a href="#3-checkout-pathgithub_urlpng-github-repo-url">3. Checkout Path(./github_url.png &ldquo;GitHub repo URL&rdquo;)</a></li>
+    <li><a href="#4-multi-git">4. Multi Git</a></li>
   </ul>
 </nav>
 
