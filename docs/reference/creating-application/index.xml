@@ -36,8 +36,11 @@ Only one docker image can be created even for multi-git repository application a
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.niveshopstree.tk/docs/reference/creating-application/deployment-template/</guid>
-      <description>Deployment Configurations It is required to execute deployment pipelines for your application.
-     Key Descriptions     Chart Version Select the Chart Version using which you want to deploy the application.    If you want to see Application Metrics (For example: Status codes 2xx, 3xx, 5xx; throughput and latency) over time for your application, then you need to make sure you select the latest chart version.</description>
+      <description>Deployment Configurations Deployment configuration is the Manifest for the application, it defines the runtime behavior of the application. You can define application behavior by providing information in three sections:
+  Chart Version
+  Yaml file
+  Show application metrics
+    1. Chart version    Key Descriptions     Chart Version Select the Chart Version using which you want to deploy the application.</description>
     </item>
     
   </channel>
