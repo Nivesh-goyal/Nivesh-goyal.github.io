@@ -4,17 +4,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Docker build Configuration Docker Build Configuration is required to execute CI Pipeline for your application.
-     Key Description     Repository Select the path of the Repository   Docker File Path Give a Relative Path for your Dockerfile   Docker Registry Select the Docker Registry you wish to use, which will be used to store distributed images.   Docker Repository Name of your Docker Repository that will store collection of related images usually providing different version of the same application."><meta property="og:title" content="Docker Configuration" />
-<meta property="og:description" content="Docker build Configuration Docker Build Configuration is required to execute CI Pipeline for your application.
-     Key Description     Repository Select the path of the Repository   Docker File Path Give a Relative Path for your Dockerfile   Docker Registry Select the Docker Registry you wish to use, which will be used to store distributed images.   Docker Repository Name of your Docker Repository that will store collection of related images usually providing different version of the same application." />
+<meta name="description" content="Docker build Configuration In the previous step, we discussed git configurations. In this section, we will provide information on the docker build config.
+Docker build configuration is used to create and push docker images in the docker registry for your application. You will provide docker related information to build and push docker images in this step.
+Only one docker image can be created even for multi-git repository application as explained in the previous step."><meta property="og:title" content="Docker Configuration" />
+<meta property="og:description" content="Docker build Configuration In the previous step, we discussed git configurations. In this section, we will provide information on the docker build config.
+Docker build configuration is used to create and push docker images in the docker registry for your application. You will provide docker related information to build and push docker images in this step.
+Only one docker image can be created even for multi-git repository application as explained in the previous step." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.niveshopstree.tk/docs/reference/creating-application/docker-configuration/" />
 
 <title>Docker Configuration | Devtron Labs tutorial</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
-<script defer src="/en.search.min.5593b60cf75e2154a6a8382ffd07e3f19331d92f76ce280acb52f9eb4f296ac1.js" integrity="sha256-VZO2DPdeIVSmqDgv/Qfj8ZMx2S92zigKy1L5608pasE="></script>
+<script defer src="/en.search.min.509c59bc3c6381dad9a69b37a12c90a69fde6d876eb9e6732b1bbb821d640905.js" integrity="sha256-UJxZvDxjgdrZpps3oSyQpp/ebYduueZzKxu7gh1kCQU="></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -436,7 +438,15 @@ https://github.com/alex-shpak/hugo-book
     <input type="checkbox" class="hidden" id="toc-control" />
     <aside class="hidden clearfix">
       
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-repository">1. Repository</a></li>
+    <li><a href="#2-docker-file-path">2. Docker file path</a></li>
+    <li><a href="#3-docker-registry">3. Docker Registry</a></li>
+    <li><a href="#4-docker-repository">4. Docker Repository</a></li>
+    <li><a href="#5-docker-build-arguments">5. Docker build arguments</a></li>
+  </ul>
+</nav>
 
 
     </aside>
@@ -447,46 +457,81 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown"><h1 id="docker-build-configuration">Docker build Configuration</h1>
-<p>Docker Build Configuration is required to execute CI Pipeline for your application.</p>
+<p>In the previous step, we discussed git configurations. In this section, we will provide information on the docker build config.</p>
+<p>Docker build configuration is used to create and push docker images in the docker registry for your application. You will provide docker related information to build and push docker images in this step.</p>
+<p><em>Only one docker image can be created even for multi-git repository application as explained in the <a href="https://www.niveshopstree.tk/docs/reference/creating-application/git-material/">previous step</a>.</em></p>
 <p>  </p>
 <p><img src="../../move2.gif" alt="Docker Configuration" title="Docker Build Configurations"/></p>
 <p>  </p>
+<p>Here you can see, 5 options are present to configure your <strong>docker build</strong>.</p>
+<ol>
+<li>
+<p>Repository</p>
+</li>
+<li>
+<p>Docker file path</p>
+</li>
+<li>
+<p>Docker Registry</p>
+</li>
+<li>
+<p>Docker Repository</p>
+</li>
+<li>
+<p>Docker build arguments</p>
+<ul>
+<li>
+<p>Key</p>
+</li>
+<li>
+<p>Value</p>
+</li>
+</ul>
+</li>
+</ol>
 <table>
 <thead>
 <tr>
-<th>Key</th>
+<th>Options</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Repository</code></td>
-<td>Select the path of the Repository</td>
+<td>Provide the checkout path of the repository in this column, which you had defined earlier in git configuration details</td>
 </tr>
 <tr>
 <td><code>Docker File Path</code></td>
-<td>Give a Relative Path for your Dockerfile</td>
+<td>Provide a relative path for your docker file. Dockerfile should be present on this path.</td>
 </tr>
 <tr>
 <td><code>Docker Registry</code></td>
-<td>Select the Docker Registry you wish to use, which will be used to store distributed images.</td>
+<td>Select the docker registry you wish to use, which will be used to <a href="https://www.niveshopstree.tk/docs/reference/global-configurations/">store docker images</a>.</td>
 </tr>
 <tr>
 <td><code>Docker Repository</code></td>
-<td>Name of your Docker Repository that will store collection of related images usually providing different version of the same application.</td>
+<td>Name of your docker repository that will store a collection of related images. Every image is stored with a new tag version.</td>
 </tr>
 <tr>
-<td><code>Key</code></td>
-<td>Key parameter for your Docker Build</td>
-</tr>
-<tr>
-<td><code>Value</code></td>
-<td>Value for a given key for your Docker build</td>
+<td><code>Key-value</code></td>
+<td>The key parameter and the value for a given key for your docker build. This is Optional. (this can be overridden at <a href="https://www.niveshopstree.tk/docs/reference/deploying-applications/triggering-ci/">CI step</a> later)</td>
 </tr>
 </tbody>
 </table>
-<p><!-- raw HTML omitted --></p>
-<p>Click on <strong>Save Configuration</strong> to save the Docker Build Configuration.</p>
+<h2 id="1-repository">1. Repository</h2>
+<p>Provide the checkout path of the repository in this column, which you defined earlier in git configuration details. In the case of multi-git, select the checkout path configured for the repository containing Dockerfile to be used for image creation.</p>
+<h2 id="2-docker-file-path">2. Docker file path</h2>
+<p>Inside the <strong>Docker file path option</strong>,  provide a relative path for your docker file. The default docker file name is <strong>Dockerfile</strong> but if you are using a custom name for your Dockerfile like <strong>xyz_dockerfile</strong>, then you have to provide that custom name.</p>
+<p>If your docker file is not at the root of the repository, then it should contain a relative path to this file. The path will be searched inside the checkout path selected in the previous step.</p>
+<h2 id="3-docker-registry">3. Docker Registry</h2>
+<p>Select the docker registry you want to use to store docker images. You can have <strong>ECR (Elastic Container Registry)</strong>, DockerHub, etc, and many other registries as your docker registry.</p>
+<p>Adding a registry in the drop-down is configurable. To get a drop-down of these registries into the docker registry option, you have to add the configuration and credentials in the <a href="https://www.niveshopstree.tk/docs/reference/global-configurations/">Global Configuration</a>.</p>
+<h2 id="4-docker-repository">4. Docker Repository</h2>
+<p>You have to provide the docker Registry(ECR) bucket name under the <strong>Docker Repository</strong> option, but this is optional. If you provide the name of your repository we will use that name but if you don’t provide a name then the docker repository is automatically created and used.</p>
+<h2 id="5-docker-build-arguments">5. Docker build arguments</h2>
+<p>Many times you use some arguments when you build your Dockerfile. Here you can provide those arguments in key-value format. You can provide one or more arguments and these arguments are optional. Read about the <a href="https://docs.docker.com/engine/reference/commandline/build/#options">docker command line and arguments</a>.</p>
+<p>Once all the configuration is done, click on <code>Save Configuration</code> to save the Docker Build Configuration.</p>
 </article>
  
       
@@ -519,7 +564,15 @@ https://github.com/alex-shpak/hugo-book
     
     <aside class="book-toc">
       
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-repository">1. Repository</a></li>
+    <li><a href="#2-docker-file-path">2. Docker file path</a></li>
+    <li><a href="#3-docker-registry">3. Docker Registry</a></li>
+    <li><a href="#4-docker-repository">4. Docker Repository</a></li>
+    <li><a href="#5-docker-build-arguments">5. Docker build arguments</a></li>
+  </ul>
+</nav>
 
  
     </aside>
